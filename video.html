@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Watch Movie | Streamzy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="video.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="STREAMZY_Logo-1.png" alt="">
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="video-section">
+        <h1 id="movieTitle">Loading...</h1>
+        <p id="movieDesc">Please wait...</p>
+
+        <video id="moviePlayer" width="100%" controls autoplay>
+      <source src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    </main>
+
+    <script>
+        const isSubscribed = localStorage.getItem("subscriptionPlan");
+        if (!isSubscribed) {
+            // window.location.href = "subscription.html";
+        }
+
+        const title = localStorage.getItem("movieTitle");
+        const desc = localStorage.getItem("movieDescription");
+        const src = localStorage.getItem("movieSrc");
+
+        if (!src) {
+            window.location.href = "home.html";
+        }
+        document.getElementById("movieTitle").textContent = title || "Untitled";
+        document.getElementById("movieDesc").textContent = desc || "No description available.";
+        document.querySelector("#moviePlayer source").src = src;
+        document.getElementById("moviePlayer").load();
+    </script>
+</body>
+
+</html>

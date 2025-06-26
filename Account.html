@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="Account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="STREAMZY_Logo-1.png" alt="">
+                <p>Help center</p>
+            </div>
+            <div class="user">
+                <div class="name" id="name">
+                    <a href="" id="userName"></a>
+                    <i class="fa-solid fa-square-caret-down"></i>
+                </div>
+                <div class="info" id="info">
+                    <a href="home.html"><i class="fas fa-arrow-left"></i>Back to STREAMZY</a>
+                    <hr>
+                    <a href="Sign In.html">Sign out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="main">
+        <h1>Account</h1>
+        <div class="account-box">
+            <section class="user-info">
+                <h3 id="profileName">Welcome!</h3>
+                <p id="profileEmail">Email: loading...</p>
+            </section>
+            <div>
+                <a href="Create-Password.html"><i class="fas fa-lock"></i>Update Password </a>
+                <a href="Terms Of uses.html"><i class="fas fa-marker"></i>Manage Terms Of Uses</a>
+            </div>
+            <hr>
+            <button class="del-account" onclick="deleteAccount()">Delete Account</button>
+        </div>
+    </section>
+
+    <footer>
+        <a href="Question.html">Questions? Contact Us</a>
+        <div class="footer-container">
+            <div>
+                <a href="FAQs.html">FAQs</a>
+            </div>
+            <div>
+                <a href="Question.html">Contact Us</a>
+            </div>
+            <div>
+                <a href="Terms Of uses.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById('info').style.display = 'none';
+
+        // Show #info when #name is clicked
+        document.getElementById('name').addEventListener('click', function(event) {
+            event.preventDefault();
+            const info = document.getElementById('info');
+            // Toggle display
+            if (info.style.display === 'flex') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'flex';
+            }
+
+        });
+
+        // Hide #info when clicking outside of #info or #name
+        document.addEventListener('click', function(event) {
+            const info = document.getElementById('info');
+            const nameBtn = document.getElementById('name');
+            if (
+                info.style.display === 'flex' &&
+                !info.contains(event.target) &&
+                !nameBtn.contains(event.target)
+            ) {
+                info.style.display = 'none';
+            }
+        });
+
+        function deleteAccount() {
+            localStorage.clear();
+            window.location.href = "Sign In.html";
+        }
+
+        const email = localStorage.getItem("userEmail");
+        const name = localStorage.getItem("userName");
+        if (email) {
+            document.getElementById("profileEmail").textContent = `Email: ${email}`;
+        }
+        if (name) {
+            document.getElementById("profileName").textContent = `Welcome, ${name}`;
+        }
+        const userName = document.getElementById("userName");
+        userName.textContent = `${name}`
+    </script>
+
+
+</body>
+
+</html>

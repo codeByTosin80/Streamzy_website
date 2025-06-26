@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | STREAMZY</title>
+    <link rel="stylesheet" href="Sign In.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <section class="hero">
+        <div class="logo">
+            <img src="STREAMZY_Logo-1.png" alt="">
+        </div>
+        <div class="signIn">
+            <div class="signIn-container">
+                <h1>Sign In</h1>
+                <form id="form">
+                    <div class="name-box">
+                        <input type="text" placeholder="Name" id="fullName" spellcheck="false">
+                        <span id="nameCheck"></span>
+                    </div>
+                    <div class="email-box">
+                        <input type="email" placeholder="Your Email Here..." id="email" spellcheck="false">
+                        <span id="emailCheck"></span>
+                    </div>
+                    <div class="password-box">
+                        <input type="password" placeholder="Password" id="password">
+                        <span id="PasswordCheck"></span>
+                    </div>
+                    <button type="submit" style="cursor: pointer;">Sign In</button>
+                    <p>New to STREAMZY?
+                        <a href="home.html" class="skip-btn">Skip</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const nameCheck = document.getElementById('nameCheck');
+        const emailCheck = document.getElementById('emailCheck');
+        const PasswordCheck = document.getElementById('PasswordCheck');
+        const Password = document.getElementById('password');
+        const email = document.getElementById('email');
+        const fullName = document.getElementById('fullName');
+        const form = document.getElementById('form');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            let hasError = false;
+
+            if (fullName.value === '') {
+                nameCheck.innerHTML = "Name is required";
+                hasError = true;
+            } else if (fullName.value.length > 6) {
+                nameCheck.innerHTML = "Name should be less than 6 characters";
+                hasError = true;
+            } else {
+                nameCheck.innerHTML = '';
+            }
+            if (email.value === '') {
+                emailCheck.innerHTML = "Email is required";
+                hasError = true;
+            } else {
+                emailCheck.innerHTML = '';
+            }
+
+            if (Password.value.length < 6 || Password.value.length > 30) {
+                PasswordCheck.textContent = "Password must be more than 6 characters and less than 30 characters";
+                hasError = true;
+            } else {
+                PasswordCheck.innerHTML = '';
+            }
+
+            if (!hasError) {
+                const emailInput = document.getElementById("email").value;
+                const nameInput = document.getElementById("fullName").value;
+                const passwordInput = document.getElementById("password").value;
+                localStorage.setItem("userName", nameInput);
+                localStorage.setItem("userEmail", emailInput);
+                localStorage.setItem("userPassword", passwordInput);
+                localStorage.setItem("streamzyUser", "true");
+                window.location.href = 'Subscription.html';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

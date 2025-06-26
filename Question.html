@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="Question.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="STREAMZY_Logo-1.png" alt="">
+                <p>Help center</p>
+            </div>
+            <div class="user">
+                <div class="name" id="name">
+                    <a href="" id="userName"></a>
+                    <i class="fa-solid fa-square-caret-down"></i>
+                </div>
+                <div class="info" id="info">
+                    <a href="home.html"><i class="fas fa-arrow-left"></i>Back to STREAMZY</a>
+                    <hr>
+                    <a href="Sign In.html">Sign out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="main" id="main">
+        <h1>Contact us on:</h1>
+        <div class="social-link">
+            <ul>
+                <li>
+                    <p>Twitter</p>
+                    <a href="https://x.com/codeByTosin"><i class="fa-brands fa-square-x-twitter"></i></a>
+                </li>
+                <li>
+                    <p>WhatsApp</p>
+                    <a href="https://wa.me/message/XW3VDSQ2BJJNC1 "><i class="fa-brands fa-square-whatsapp"></i></a>
+                </li>
+                <li>
+                    <p>Facebook</p>
+                    <a href="https://web.facebook.com/adeola.ajibade.77377"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="quick-link">
+            <h2>Quick Links</h2>
+            <ul>
+                <!-- <li><i class="fa-solid fa-bullhorn"></i>
+                    <a href="">Request TV shows or movies</a> </li> -->
+                <li><i class="fa-solid fa-lock"></i>
+                    <a href="Create-Password.html">Update password                  </a></li>
+                <li><i class="fa-solid fa-credit-card"></i>
+                    <a href="Subscription.html">Update Plan </a></li>
+                <li><i class="fa-solid fa-ban"></i>
+                    <button onclick="deleteAccount()">Cancel account </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <footer id="footer">
+        <a href="Terms Of uses.html">Terms of Use</a>
+        <a href="Account.html">Account</a>
+
+    </footer>
+
+
+
+
+
+    <script>
+        const name = localStorage.getItem("userName");
+        const userName = document.getElementById("userName");
+        userName.textContent = `${name}`
+        document.getElementById('info').style.display = 'none';
+
+        // Show #info when #name is clicked
+        document.getElementById('name').addEventListener('click', function(event) {
+            event.preventDefault();
+            const info = document.getElementById('info');
+            // Toggle display
+            if (info.style.display === 'flex') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'flex';
+            }
+
+        });
+
+        // Hide #info when clicking outside of #info or #name
+        document.addEventListener('click', function(event) {
+            const info = document.getElementById('info');
+            const nameBtn = document.getElementById('name');
+            if (
+                info.style.display === 'flex' &&
+                !info.contains(event.target) &&
+                !nameBtn.contains(event.target)
+            ) {
+                info.style.display = 'none';
+            }
+        });
+
+        function deleteAccount() {
+            localStorage.clear();
+            window.location.href = "Sign In.html";
+        }
+    </script>
+</body>
+
+</html>

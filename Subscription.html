@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsciption | STREAMZY</title>
+    <link rel="stylesheet" href="Subscription.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="STREAMZY_Logo-1.png" alt="">
+                <p>Help center</p>
+            </div>
+            <div class="user">
+                <div class="name" id="name">
+                    <a href="" id="userName"></a>
+                    <i class="fa-solid fa-square-caret-down"></i>
+                </div>
+                <div class="info" id="info">
+                    <a href="home.html"><i class="fas fa-arrow-left"></i>Back to STREAMZY</a>
+                    <a href="Account.html"><i class="fas fa-user"></i>Account</a>
+                    <a href="Account.html"><i class="fas fa-pencil"></i>Manage Profile</a>
+                    <hr>
+                    <a href="Sign In.html">Sign out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="plans-intro">
+        <h1>Choose Your Plan</h1>
+        <p>Select the plan that suits you best and start watching unlimited movies & shows on Streamzy.</p>
+    </section>
+
+    <section class="plans-container">
+        <div class="plan-card">
+            <h2>Basic</h2>
+            <p class="price">₦2,500/month </p>
+            <ul>
+                <li>✓ Watch on 1 device</li>
+                <li>✓ 480p video quality</li>
+                <li>✓ Unlimited movies & shows</li>
+            </ul>
+            <button onclick="subscribe('Basic')" class="btn">Subscribe</button>
+        </div>
+
+        <div class="plan-card popular">
+            <h2>Standard</h2>
+            <p class="price">₦5,000/month</p>
+            <ul>
+                <li>✓ Watch on 2 devices</li>
+                <li>✓ HD video quality</li>
+                <li>✓ Access to new releases</li>
+            </ul>
+            <button onclick="subscribe('Standard')" class="btn">Subscribe</button>
+        </div>
+
+        <div class="plan-card">
+            <h2>Premium</h2>
+            <p class="price">₦8,000/month</p>
+            <ul>
+                <li>✓ Watch on 4 devices</li>
+                <li>✓ Full HD & 4K</li>
+                <li>✓ Early access to new content</li>
+            </ul>
+            <button onclick="subscribe('Premium')" class="btn">Subscribe</button>
+        </div>
+    </section>
+    <div class="popUp-backdrop" id="popup">
+        <div class="text">
+            <i class="fa-solid fa-circle-check"></i>
+            <p id="message"></p>
+            <button onclick="ok()">Ok</button>
+        </div>
+    </div>
+    <div class="skip-btn">
+        <a href="home.html" class="btn2">Skip</a>
+    </div>
+    <footer>
+        <p>© 2025 Streamzy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+<script>
+    document.getElementById('info').style.display = 'none';
+
+    document.getElementById('name').addEventListener('click', function(event) {
+        event.preventDefault();
+        const info = document.getElementById('info');
+        if (info.style.display === 'flex') {
+            info.style.display = 'none';
+        } else {
+            info.style.display = 'flex';
+        }
+
+    });
+
+    document.addEventListener('click', function(event) {
+        const info = document.getElementById('info');
+        const nameBtn = document.getElementById('name');
+        if (
+            info.style.display === 'flex' &&
+            !info.contains(event.target) &&
+            !nameBtn.contains(event.target)
+        ) {
+            info.style.display = 'none';
+        }
+    });
+</script>
+<script>
+    const popUp = document.getElementById("popup");
+    popUp.style.display = 'none';
+
+    function subscribe(planName) {
+        localStorage.setItem("subscriptionPlan", planName);
+        popUp.style.display = 'flex';
+
+        const name = localStorage.getItem("userName");
+        const subscription = localStorage.getItem("subscriptionPlan");
+
+        document.getElementById("message").textContent = `${name}, you've successfully subscribed to the ${subscription} plan.`;
+    }
+
+    function ok() {
+        localStorage.setItem("subscriptionStatus", "active");
+        popUp.style.display = 'none';
+        window.location.href = 'home.html';
+    }
+    const name = localStorage.getItem("userName");
+    const userName = document.getElementById("userName");
+    userName.textContent = `${name}`
+</script>
+
+</body>
+
+</html>

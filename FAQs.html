@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs</title>
+    <link rel="stylesheet" href="FAQs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <header id="header">
+      <nav>
+        <div class="logo">
+          <img src="STREAMZY_Logo-1.png" alt="" />
+          <p>Help center</p>
+        </div>
+        <div class="user">
+          <div class="name" id="name">
+            <a href="" id="userName"></a>
+            <i class="fa-solid fa-square-caret-down"></i>
+          </div>
+          <div class="info" id="info">
+            <a href="home.html"
+              ><i class="fas fa-arrow-left"></i>Back to STREAMZY</a
+            >
+            <a href="Account.html"><i class="fas fa-user"></i>Account</a>
+            <hr />
+            <a href="Sign In.html">Sign out</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="main">
+      <a href="/" class="back"><i class="fas fa-arrow-left"></i>Back</a>
+      <div class="first-div">
+        <h1 id="head">What is STREAMZY?</h1>
+        <img src="background.jpg" alt="" />
+        <p>
+          STREAMZY is a subscription-based <b>streaming service </b> that allows
+          our members to watch TV shows and movies on an internet-connected
+          device.<br />
+          <b>Depending on your plan</b>, you can also
+          <b> download TV shows and movies</b> to your Android phone or tablet,
+          iPhone, iPad, or Google Chromebook device and watch without an
+          internet connection. <br />
+          If you're already a member and would like to learn more about using
+          STREAMZY, visit <b>Getting started with STREAMZY.</b>
+        </p>
+      </div>
+      <hr />
+      <div class="second-div">
+        <h1>TV Shows & Movies</h1>
+        <img src="background.jpg" alt="" />
+        <p>
+          STREAMZY content varies by region and may change over time. You can
+          watch a variety of
+          <b
+            >award-winning TREAMZY originals, TV shows, movies, documentaries,
+            and more</b
+          >. The more you watch, the better STREAMZY gets at recommending TV
+          shows and movies.
+        </p>
+      </div>
+      <hr />
+      <div class="third-div">
+        <h1>Supported Devices</h1>
+        <img src="background.jpg" alt="" />
+        <p>
+          You can watch STREAMZY through any supported internet-connected device
+          that offers the STREAMZY app, including smart TVs, game consoles,
+          streaming media players, cable boxes, smartphones, and tablets. You
+          can also watch STREAMZY on your computer using an internet browser. To
+          get the best performance, you can review the system requirements for
+          web browser compatibility and check our internet speed
+          recommendations.
+        </p>
+        <p class="note">
+          <b>Note:</b> A small percentage of devices may not be supported by all
+          plans.
+        </p>
+        <p>
+          Need help getting set up? Search our Help Center for the manufacturer
+          of the device you're using.
+        </p>
+        <p class="note">
+          <b>Note:</b> The STREAMZY app may come pre-loaded on certain devices,
+          or you may need to download the STREAMZY app onto your device.
+          STREAMZY app functionality may differ between devices.
+        </p>
+      </div>
+      <hr />
+      <div class="fourth-div">
+        <h1>Plans and Pricing</h1>
+        <img src="background.jpg" alt="" />
+        <p>
+          Each STREAMZY plan determines the number of devices you can watch
+          STREAMZY on at the same time and whether you can watch in High
+          Definition (HD), Full High Definition (FHD), or Ultra High Definition
+          (UHD). You can change your plan or cancel online at any time.
+        </p>
+      </div>
+      <hr />
+      <div class="fifth-div">
+        <h1>Get Started</h1>
+        <img src="background.jpg" alt="" />
+        <p>To start watching STREAMZY:</p>
+        <ol>
+          <li>
+            <a href="Subscription.html">Choose a plan.</a>
+          </li>
+          <li>
+            Create an account by entering your email address and creating a
+            password.
+          </li>
+          <li>Enter a payment method.</li>
+        </ol>
+        <p>
+          As a STREAMZY member, you are charged once a month on the date you
+          signed up.
+        </p>
+      </div>
+      <hr />
+      <p>
+        Was this article helpful? <span><b>Yes</b></span> <span><b>No</b></span>
+      </p>
+    </section>
+    <footer id="footer">
+      <div class="contact">
+        <p>Need more help?</p>
+        <a href="Question.html">Contact Us</a>
+      </div>
+      <hr />
+      <a href="Terms Of uses.html">Terms of Use</a>
+      <a href="Account.html">Account</a>
+    </footer>
+
+    <script>
+      // Make sure #info is hidden by default (in case CSS didn't load)
+      document.getElementById("info").style.display = "none";
+
+      // Show #info when #name is clicked
+      document
+        .getElementById("name")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const info = document.getElementById("info");
+          // Toggle display
+          if (info.style.display === "flex") {
+            info.style.display = "none";
+          } else {
+            info.style.display = "flex";
+          }
+        });
+
+      // Hide #info when clicking outside of #info or #name
+      document.addEventListener("click", function (event) {
+        const info = document.getElementById("info");
+        const nameBtn = document.getElementById("name");
+        if (
+          info.style.display === "flex" &&
+          !info.contains(event.target) &&
+          !nameBtn.contains(event.target)
+        ) {
+          info.style.display = "none";
+        }
+      });
+      const name = localStorage.getItem("userName");
+      const userName = document.getElementById("userName");
+      userName.textContent = `${name}`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREAMZY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=play_circle" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="home" id="home">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="STREAMZY_Logo-1.png" alt="">
+                </div>
+                <button class="signIn" id="authBtn">Sign In</button>
+            </nav>
+        </header>
+
+        <div class="main">
+            <h1>Stream it all — your world of <br>stories begins here.</h1>
+            <p class="first-parag">No ads. No stress. Just entertainment.</p>
+            <p id="greetingText" class="second-parag"></p>
+        </div>
+    </section>
+    <section class="next-section">
+        <div class="trending">
+            <p>Trending Now</p>
+            <div class="trend-movies-wrapper">
+                <div class="scroll-btn-left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="trend-movies">
+                    <div class="movie-card" data-id="1">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">1</span>
+                        <img src="Wolf Man.jpg" alt="Movie 1">
+                    </div>
+                    <div class="movie-card" data-id="2">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">2</span>
+                        <img src="captain America.jpeg" alt="Movie 2">
+                    </div>
+                    <div class="movie-card" data-id="3">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">3</span>
+                        <img src="Sinners poster.jpg" alt="Movie 3">
+                    </div>
+                    <div class="movie-card" data-id="4">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">4</span>
+                        <img src="Thunderbolts__poster.jpg" alt="Movie 4">
+                    </div>
+                    <div class="movie-card" data-id="5">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">5</span>
+                        <img src="Mickey.jpeg" alt="Movie 5">
+                    </div>
+                    <div class="movie-card" data-id="6">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">6</span>
+                        <img src="Snow White.jpeg" alt="Movie 6">
+                    </div>
+                    <div class="movie-card" data-id="7">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">7</span>
+                        <img src="Paddington in Peru.jpeg" alt="Movie 7">
+                    </div>
+                    <div class="movie-card" data-id="8">
+                        <span class="logo-mark">
+                        <img src="STREAMZY_Logo-2.png" alt=""></span>
+                        <span class="rank">8</span>
+                        <img src="A minecraft.jpeg" alt="Movie 8">
+                    </div>
+
+                </div>
+                <div class="scroll-btn-right">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie-card-overlay">
+            <div class="movie-card-1" data-id="1">
+                <i class="fas fa-times"></i>
+                <h1>Wolf Man</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>The Wolf Man is a figure from folklore and horror fiction, typically described as a human who can transform into a wolf, or a wolf-like creature, often under the influence of a full moon</p>
+                <a href="" class="watch-btn" data-title="Wolf Man" data-description="The Wolf Man is a figure from folklore and horror fiction,..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-2" data-id="2">
+                <i class="fas fa-times"></i>
+                <h1>Captain America</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>"Captain America: Brave New World" features Sam Wilson as the new Captain America, who is thrust into an international crisis. He must uncover a global conspiracy before a mastermind plunges the world into chaos</p>
+                <a href="" class="watch-btn" data-title="Captain America" data-description="Captain America: Brave New World features Sam Wilson as the new Captain America..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-3" data-id="3">
+                <i class="fas fa-times"></i>
+                <h1>Sinners</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>"Sinners" is a 2025 American supernatural horror film directed by Ryan Coogler, starring Michael B. Jordan in a dual role as twin brothers</p>
+                <a href="" class="watch-btn" data-title="Sinners" data-description="American supernatural horror film directed by Ryan Coogler, starring Michael B..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-4" data-id="4">
+                <i class="fas fa-times"></i>
+                <h1>Thunderbolts</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>"Thunderbolts" is a 2025 Marvel Cinematic Universe film that assembles a team of antiheroes, including Yelena Belova, Bucky Barnes, Red Guardian, Ghost, Taskmaster, and John Walker</p>
+                <a href="" class="watch-btn" data-title="Thunderbolts" data-description="'Thunderbolts' is a 2025 Marvel Cinematic Universe film that assembles a team of antiheroes,..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-5" data-id="5">
+                <i class="fas fa-times"></i>
+                <h1> Mickey 17</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>The story follows Mickey, an "expendable," a disposable clone revived after death, on a dangerous mission to colonize the ice planet Niflheim</p>
+                <a href="" class="watch-btn" data-title=" Mickey 17" data-description="'Mickey 17' is a 2025 science fiction film directed by Bong Joon-ho,..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-6" data-id="6">
+                <i class="fas fa-times"></i>
+                <h1> Snow White</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>"Snow White" is a reimagining of the classic 1937 animated film, starring Rachel Zegler as Snow White and Gal Gadot as the Evil Queen.</p>
+                <a href="" class="watch-btn" data-title="Snow White" data-description="The story follows Snow White as she flees the Queen's..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-7" data-id="7">
+                <i class="fas fa-times"></i>
+                <h1>Paddington in Peru</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>"Paddington in Peru" follows Paddington and the Brown family as they travel to Peru to visit Aunt Lucy at the Home for Retired Bears.</p>
+                <a href="" class="watch-btn" data-title="Paddington in Peru" data-description="'Paddington in Peru' follows Paddington and the Brown family as they travel to Peru to visit..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+            <div class="movie-card-8" data-id="8">
+                <i class="fas fa-times"></i>
+                <h1>A Minecraft</h1>
+                <p><span>2025 </span> <span>16+</span> <span>Dramas</span>
+                </p>
+                <p>"A Minecraft Movie" follows four misfits-  Garrett, Henry, Natalie, and Dawn- who are unexpectedly transported to the Overworld, the blocky world of Minecraft.</p>
+                <a href="" class="watch-btn" data-title="A Minecraft" data-description="'A Minecraft Movie' follows four misfits-  Garrett, Henry, Natalie,..." data-src="10,000 B.C. - Teaser.mp4">Get Started</a>
+            </div>
+        </div>
+        <div class="reason">
+            <h2>More Reasons to Join</h2>
+            <div class="reason-container">
+                <div class="reason-card">
+                    <h4>Enjoy on your TV</h4>
+                    <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+                    <img src="computer_5724119.png" alt="">
+                </div>
+                <div class="reason-card">
+                    <h4>Download your shows to watch offline</h4>
+                    <p>Save your favorites easily and always have something to watch.</p>
+                    <img src="download_4518473.png" alt="">
+                </div>
+                <div class="reason-card">
+                    <h4>Watch everywhere</h4>
+                    <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                    <img src="binoculars_6106274.png" alt="">
+                </div>
+                <div class="reason-card">
+                    <h4>
+                        Create profiles for kids</h4>
+                    <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+                    <img src="app_14979514.png" alt="">
+                </div>
+            </div>
+    </section>
+    <section class="FAQ">
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li>
+                <a href="" class="question">What is STREAMZY? <i class="fas fa-plus"></i></a>
+                <p class="answer">Streamzy is a premium streaming platform that brings you a world of entertainment — from must-watch TV shows and blockbuster movies to exciting documentaries, animes, and more, all available on any internet-connected device. <br><br>With
+                    Streamzy, you can watch whatever you love, whenever you want — with no ads, no interruptions, and for one simple monthly plan. There's always something new waiting — fresh content is added every week to keep you hooked and entertained.</p>
+            </li>
+            <li> <a href="" class="question">How much does STREAMZY cost? <i class="fas fa-plus"></i></a>
+                <p class="answer">Watch Streamzy on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plan ranges from ₦2,500 to ₦8,000 per month. You get unlimited access to all content — no ads, no contracts, and the freedom
+                    to cancel anytime.
+                </p>
+            </li>
+            <li> <a href="" class="question">Where can I watch? <i class="fas fa-plus"></i></a>
+                <p class="answer">You can watch Streamzy on almost any internet-connected device. Whether you're using a smartphone, tablet, laptop, smart TV, or desktop computer, just sign in and start streaming. You can even switch between devices — start watching on
+                    your phone, and continue on your TV. No limits, no hassle — Streamzy goes wherever you go.</p>
+            </li>
+            <li> <a href="" class="question">How do I cancel? <i class="fas fa-plus"></i></a>
+                <p class="answer">Streamzy is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees - start or stop your account anytime.</p>
+            </li>
+            <li> <a href="" class="question">What can I watch on STREAMZY? <i class="fas fa-plus"></i></a>
+                <p class="answer">Streamzy offers a rich library of content — trending movies, exciting series, classic hits, documentaries, anime, and more. New titles are added weekly, so there's always something fresh to enjoy.</p>
+            </li>
+            <li> <a href="" class="question">Is STREAMZY good for Kids? <i class="fas fa-plus"></i></a>
+                <p class="answer">Yes! Streamzy is perfect for kids and families. We offer a kids-safe section filled with cartoons, animations, and educational content tailored to different age groups. Parents can also set up restricted profiles and enable parental controls
+                    to make sure children only see what's appropriate. Peace of mind, and fun for the whole family!
+
+                </p>
+            </li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <a href="Question.html" id="question-btn">Questions? Contact Us</a>
+        <div class="footer-container">
+            <div>
+                <a href="FAQs.html" id="FAQ-btn">FAQs</a>
+            </div>
+            <div>
+                <a href="Account.html" id="Account-btn">Account</a>
+            </div>
+            <div>
+                <a href="Question.html" id="question-btn">Contact Us</a>
+            </div>
+            <div>
+                <a href="Terms Of uses.html" id="Terms-btn">Terms of Use</a>
+            </div>
+            <div>
+                <select name="lan" id="language">
+                    <option value="English"> English</option>
+                </select>
+            </div>
+        </div>
+        <p>STREAMZY Nigeria</p>
+    </footer>
+
+
+
+
+    <script>
+        const trendMovies = document.querySelector('.trend-movies');
+        const leftBtn = document.querySelector('.scroll-btn-left');
+        const rightBtn = document.querySelector('.scroll-btn-right');
+
+        leftBtn.addEventListener('click', () => {
+            trendMovies.scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        });
+        rightBtn.addEventListener('click', () => {
+            trendMovies.scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script>
+        // Get all question links in the FAQ section
+        const allQuestions = document.querySelectorAll('.FAQ .question');
+        // Get all answer paragraphs in the FAQ section
+        const allAnswers = document.querySelectorAll('.FAQ .answer');
+
+        // Loop through each question
+        allQuestions.forEach(function(question) {
+            question.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent link from navigating
+
+                // Check if this question is already active/open
+                const isOpen = question.classList.contains('active');
+
+                // Close all questions and answers
+                allQuestions.forEach(function(q) {
+                    q.classList.remove('active');
+                });
+                allAnswers.forEach(function(a) {
+                    a.classList.remove('open');
+                });
+
+                // If this question was not open, open it
+                if (!isOpen) {
+                    question.classList.add('active'); // Highlight the question
+                    // Show the answer right after this question
+                    const answer = question.nextElementSibling;
+                    if (answer && answer.classList.contains('answer')) {
+                        answer.classList.add('open');
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        const overlay = document.querySelector('.movie-card-overlay');
+
+        const overlayContents = overlay.querySelectorAll('div[class^="movie-card-"]');
+
+        document.querySelectorAll('.movie-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const id = card.getAttribute('data-id');
+                overlay.classList.add('active');
+                document.body.classList.add('no-scroll');
+
+                overlayContents.forEach(content => {
+                    if (content.getAttribute('data-id') === id) {
+                        content.classList.add('active');
+                        document.body.classList.add('no-scroll');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                overlayContents.forEach(content => {
+                    content.classList.remove('active');
+                    content.style.backgroundImage = "";
+                });
+            }
+            if (e.target.classList.contains('fa-times')) {
+                overlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                overlayContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+            }
+        });
+    </script>
+
+    <script>
+        const authBtn = document.getElementById("authBtn");
+
+        if (localStorage.getItem("streamzyUser")) {
+            authBtn.textContent = "Sign Out";
+            authBtn.onclick = function() {
+                localStorage.clear();
+                window.location.href = "Sign In.html";
+            };
+        } else {
+            authBtn.textContent = "Sign Up";
+            authBtn.onclick = function() {
+                window.location.href = "Sign In.html";
+            };
+        }
+    </script>
+    <script>
+        const userName = localStorage.getItem("userName");
+        if (userName) {
+            document.getElementById("greetingText").textContent = "🔥 Welcome back, " + userName + "!";
+        }
+    </script>
+    <script>
+        const buttons = document.querySelectorAll('.watch-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isSubscribed = localStorage.getItem("subscriptionStatus");
+                const isStreamzyUser = localStorage.getItem("streamzyUser");
+                if (isStreamzyUser !== "true") {
+                    window.location.href = "Sign In.html";
+                    return;
+                }else  if (isSubscribed !== "active") {                  
+                    window.location.href = "Subscription.html";
+                    return;
+                }
+
+                const title = this.getAttribute("data-title");
+                const desc = this.getAttribute("data-description");
+                const src = this.getAttribute("data-src");
+
+                localStorage.setItem("movieTitle", title);
+                localStorage.setItem("movieDescription", desc);
+                localStorage.setItem("movieSrc", src);
+
+                window.location.href = "video.html";
+            });
+        });
+    </script>
+<script>
+    const questionBtn = document.getElementById("question-btn");
+    const FAQBtn = document.getElementById("FAQ-btn");
+    const AccountBtn = document.getElementById("Account-btn");
+    const TermsBtn = document.getElementById("Terms-btn");
+    questionBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (!localStorage.getItem("streamzyUser")) {
+            window.location.href = "Sign In.html";
+            return;
+        }else {
+            window.location.href = "Question.html";
+        }       
+    });
+    FAQBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (!localStorage.getItem("streamzyUser")) {
+            window.location.href = "Sign In.html";
+            return;
+        }else {
+            window.location.href = "FAQs.html";
+        }       
+    });
+    AccountBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (!localStorage.getItem("streamzyUser")) {
+            window.location.href = "Sign In.html";
+            return;
+        }else {
+            window.location.href = "Account.html";
+        }       
+    });
+    TermsBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (!localStorage.getItem("streamzyUser")) {
+            window.location.href = "Sign In.html";
+            return;
+        }else {
+            window.location.href = "Terms Of uses.html";
+        }       
+    });   
+</script>
+</body>
+
+</html>
+
+</html>
